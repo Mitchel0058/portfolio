@@ -1,0 +1,19 @@
+.bg-lightgreen {
+    background-color: #6de76d;
+}
+
+.bg-darkgreen {
+    background-color: #339f00;
+}
+
+.bg-darkerblue {
+    background-color: #000033;
+}
+
+.border-darkblue {
+    border-color: darkblue !important;
+}
+
+.w-20 {
+    width: 20% !important;
+}
