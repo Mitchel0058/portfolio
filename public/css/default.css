@@ -17,3 +17,7 @@
 .w-20 {
     width: 20% !important;
 }
+
+.cursor-pointer:hover {
+    cursor: pointer;
+}

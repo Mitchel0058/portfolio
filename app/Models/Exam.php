@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dashboard extends Model
+class Exam extends Model
 {
     use HasFactory;
-
-    public function exam()
+    public function dashboard()
     {
-        return $this->hasMany(Exam::class);
+        return $this->belongsTo(Dashboard::class);
     }
 }

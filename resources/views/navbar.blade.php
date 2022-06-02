@@ -7,20 +7,20 @@
     {{--        </button>--}}
     <div class="collapse navbar-collapse text-dark" id="navbarNavDropdown">
         <ul class="navbar-nav mx-4">
-            <li class="nav-item active">
+            <li class="nav-item active mx-1">
                 <a class="nav-link text-dark {{ Request::route()->getName() === null ? "rounded-3 bg-darkgreen" : "" }}" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Profile</a>
+                <a class="nav-link text-dark mx-1" href="profile">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark {{ Request::route()->getName() === 'dashboards.index' ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('dashboards.index') }}">Dashboard</a>
+                <a class="nav-link text-dark mx-1 {{ Request::route()->getName() === 'dashboards.index' ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('dashboards.index') }}">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" href="#">FAQ</a>
+                <a class="nav-link text-dark mx-1" href="#">FAQ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Blog</a>
+                <a class="nav-link text-dark mx-1" href="#">Blog</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink"
@@ -43,5 +43,8 @@
                 </div>
             </li>
         </ul>
+    </div>
+    <div class="collapse navbar-collapse text-dark justify-content-end">
+        <a class="nav-link text-dark" href="#">Log in</a>
     </div>
 </nav>
