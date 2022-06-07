@@ -16,71 +16,71 @@ class DashboardSeeder extends Seeder
     public function run()
     {
         DB::table('dashboards')->insert([
-            'Year' => 1,
-            'Quartile' => 1,
-            'Course' => 'Programme and Career Orientation',
+            'year' => 1,
+            'quartile' => 1,
+            'course' => 'Programme and Career Orientation',
             'EC' => 2.5,
-            'Course_Grade' => null,
+            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('dashboards')->insert([
-            'Year' => 1,
-            'Quartile' => 1,
-            'Course' => 'Computer Science Basics',
+            'year' => 1,
+            'quartile' => 1,
+            'course' => 'Computer Science Basics',
             'EC' => 5,
-            'Course_Grade' => null,
+            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('dashboards')->insert([
-            'Year' => 1,
-            'Quartile' => 1,
-            'Course' => 'Programming Basics',
+            'year' => 1,
+            'quartile' => 1,
+            'course' => 'Programming Basics',
             'EC' => 5,
-            'Course_Grade' => null,
+            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('dashboards')->insert([
-            'Year' => 1,
-            'Quartile' => 2,
-            'Course' => 'Object Oriented Programming',
+            'year' => 1,
+            'quartile' => 2,
+            'course' => 'Object Oriented Programming',
             'EC' => 10,
-            'Course_Grade' => null,
+            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('dashboards')->insert([
-            'Year' => 1,
-            'Quartile' => 3,
-            'Course' => 'Framework Development 1',
+            'year' => 1,
+            'quartile' => 3,
+            'course' => 'Framework Development 1',
             'EC' => 5,
-            'Course_Grade' => null,
+            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('dashboards')->insert([
-            'Year' => 1,
-            'Quartile' => 3,
-            'Course' => 'Framework Project 1',
+            'year' => 1,
+            'quartile' => 3,
+            'course' => 'Framework Project 1',
             'EC' => 7.5,
-            'Course_Grade' => null,
+            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('dashboards')->insert([
-            'Year' => 1,
-            'Quartile' => 4,
-            'Course' => 'Portfolio',
+            'year' => 1,
+            'quartile' => 4,
+            'course' => 'Portfolio',
             'EC' => 10,
-            'Course_Grade' => null,
+            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,4 @@ Route::get('/profile', function () {
 });
 
 Route::resource('/dashboards', DashboardController::class);
-
+Route::resource('/blog', BlogController::class);

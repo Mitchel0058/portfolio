@@ -17,88 +17,88 @@ class ExamSeeder extends Seeder
     {
         DB::table('exams')->insert([
             'dashboard_id' => 1,
-            'Exam_Name' => 'Assessment Exam',
-            'Exam_Grade' => null,
+            'exam_name' => 'Assessment Exam',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 2,
-            'Exam_Name' => 'Written exam',
-            'Exam_Grade' => null,
+            'exam_name' => 'Written exam',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 3,
-            'Exam_Name' => 'Case study exam',
-            'Exam_Grade' => null,
+            'exam_name' => 'Case study exam',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 4,
-            'Exam_Name' => 'Case study exam',
-            'Exam_Grade' => null,
+            'exam_name' => 'Case study exam',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 4,
-            'Exam_Name' => 'Project',
-            'Exam_Grade' => null,
+            'exam_name' => 'Project',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 5,
-            'Exam_Name' => 'Case study exam',
-            'Exam_Grade' => null,
+            'exam_name' => 'Case study exam',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 6,
-            'Exam_Name' => 'Project',
-            'Exam_Grade' => null,
+            'exam_name' => 'Project',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 6,
-            'Exam_Name' => 'Assessment',
-            'Exam_Grade' => null,
+            'exam_name' => 'Assessment',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 6,
-            'Exam_Name' => 'Report',
-            'Exam_Grade' => null,
+            'exam_name' => 'Report',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 7,
-            'Exam_Name' => 'Project',
-            'Exam_Grade' => null,
+            'exam_name' => 'Project',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('exams')->insert([
             'dashboard_id' => 7,
-            'Exam_Name' => 'Assessment',
-            'Exam_Grade' => null,
+            'exam_name' => 'Assessment',
+            'exam_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

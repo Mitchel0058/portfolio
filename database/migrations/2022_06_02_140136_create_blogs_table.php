@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('exams', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('dashboard_id')->constrained();
-            $table->text('exam_Name');
-            $table->integer('exam_Grade')->unsigned()->nullable();
+            $table->text('title');
+            $table->text('paragraph');
+            $table->text('img_link')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exams');
+        Schema::dropIfExists('blogs');
     }
 };

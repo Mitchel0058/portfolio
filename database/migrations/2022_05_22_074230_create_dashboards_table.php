@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('dashboards', function (Blueprint $table) {
             $table->id();
-            $table->integer('Year')->unsigned();
-            $table->integer('Quartile')->unsigned();
-            $table->text('Course');
+            $table->integer('year')->unsigned();
+            $table->integer('quartile')->unsigned();
+            $table->text('course');
             $table->integer('EC')->unsigned();
-            $table->integer('Course_Grade')->unsigned()->nullable();
+            $table->integer('course_grade')->unsigned()->nullable();
             $table->timestamps();
         });
     }
