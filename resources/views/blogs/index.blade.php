@@ -11,6 +11,16 @@
                     {{ Str::limit($blog->paragraph, 150, '...') }}
                 </p>
                 <a href="/blog/{{ $blog->id }}" class="h4">Read blog</a>
+                <div>
+                <a href="/blog/{{ $blog->id }}/edit" class="btn btn-warning">Edit</a>
+                <form method="POST" action="/blog/{{ $blog->id }}" class="all-unset">
+                    @csrf
+                    @method('DELETE')
+                        <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Are you certain you want to delete this foo?')">Delete
+                        </button>
+                </form>
+                </div>
             </div>
             <br/>
         @endforeach
@@ -18,8 +28,7 @@
             @if($page > 1)
                 <a href="/blog?page={{ $page - 1}}" class="float-sm-start h5">Previous</a>
             @endif
-
-            @if(($page + 1) * $paginate_amount <= $blogs->total())
+            @if(($page + 1) * ($paginate_amount - 1) <= $blogs->total())
                 <a href="/blog?page={{ $page + 1}}" class="float-sm-end h5">Next</a>
             @endif
             <br/>

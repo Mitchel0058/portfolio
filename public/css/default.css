@@ -21,3 +21,19 @@
 .cursor-pointer:hover {
     cursor: pointer;
 }
+
+.mw-30 {
+    max-width: 30%; !important;
+}
+
+.mh-75 {
+    max-height: 75%; !important;
+}
+
+.top-20 {
+    top: 20%; !important;
+}
+
+.all-unset {
+    all: unset;
+}

@@ -14,13 +14,13 @@
                 <a class="nav-link text-dark mx-1" href="profile">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark mx-1 {{ Request::route()->getName() === 'dashboards.index' ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('dashboards.index') }}">Dashboard</a>
+                <a class="nav-link text-dark mx-1 {{ request()->routeIs('dashboards.*') ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('dashboards.index') }}">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark mx-1" href="#">FAQ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark mx-1 {{ Request::route()->getName() === 'blog.index' ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('blog.index') }}">Blog</a>
+                <a class="nav-link text-dark mx-1 {{ request()->routeIs('blog.*') ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('blog.index') }}">Blog</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink"
