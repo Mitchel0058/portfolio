@@ -9,9 +9,6 @@
 
                     <div class="mb-3">
                         <label for="title" class="form-label h3">Titel</label>
-                        {{--                        <input name="title" class="input @error('title') is-danger @enderror" --}}
-                        {{--                               type="text" placeholder="Your title here..."--}}
-                        {{--                               value="{{$blog->title }}">--}}
                         <input name="title" type="text"
                                class="form-control @error('title') border-2 border-danger @enderror"
                                value="{{$blog->title }}" placeholder="Your title here...">
@@ -23,9 +20,9 @@
 
                     <div class="mb-3">
                         <label for="paragraph" class="form-label">Paragraph</label>
-                        <input name="paragraph" type="text"
-                               class="form-control @error('title') border-2 border-danger @enderror"
-                               value="{{$blog->paragraph }}" placeholder="Your paragraph here...">
+                        <textarea name="paragraph" type="text"
+                                  class="form-control @error('paragraph') border-2 border-danger @enderror"
+                                  placeholder="The text/paragraph of the blog" rows="10">{{ $blog->paragraph }}</textarea>
                         @error('paragraph')
                         <p class="text-danger my-0">{{ $message }}</p>
                         @enderror
@@ -34,7 +31,7 @@
                     <div class="mb-3">
                         <label for="img_link" class="form-label">Link to an img</label>
                         <input name="img_link" type="text"
-                               class="form-control @error('title') border-2 border-danger @enderror"
+                               class="form-control @error('img_link') border-2 border-danger @enderror"
                                value="{{$blog->img_link }}" placeholder="Your link here...">
                         <div id="imgHelp" class="form-text">Link to an image, can be left blank</div>
                         @error('img_link')

@@ -2,6 +2,7 @@
 <title>My blogs</title>
 @section('content')
     <div class="container" style="text-align: -webkit-center">
+        <a href="/blog/create" class="btn btn-success position-absolute end-0">New blog</a>
         @foreach($blogs as $blog)
             <div class="d-flex flex-column p-2 border border-darkblue bg-darkerblue" style="max-width: 60%">
                 <div class="text-center h3">
@@ -12,14 +13,14 @@
                 </p>
                 <a href="/blog/{{ $blog->id }}" class="h4">Read blog</a>
                 <div>
-                <a href="/blog/{{ $blog->id }}/edit" class="btn btn-warning">Edit</a>
-                <form method="POST" action="/blog/{{ $blog->id }}" class="all-unset">
-                    @csrf
-                    @method('DELETE')
+                    <a href="/blog/{{ $blog->id }}/edit" class="btn btn-warning">Edit</a>
+                    <form method="POST" action="/blog/{{ $blog->id }}" class="all-unset">
+                        @csrf
+                        @method('DELETE')
                         <button type="submit" class="btn btn-danger"
                                 onclick="return confirm('Are you certain you want to delete this foo?')">Delete
                         </button>
-                </form>
+                    </form>
                 </div>
             </div>
             <br/>

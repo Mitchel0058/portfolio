@@ -9,7 +9,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 
 class BlogController extends Controller
@@ -53,6 +52,16 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
+    //    Should check if img_link is an img and if not make img_link null but doesn't work and don't know why
+
+//        $headers = get_headers($request->img_link, 1);
+//        if (strpos($headers['Content-Type'], 'image') !== false) {
+//            dd("{$request->img_link} is img");
+//        } else {
+//            dd("$request->img_link} NOPE");
+//        }
+
+
         Blog::create($request->validate([
             'title' => 'required',
             'paragraph' => 'required',
