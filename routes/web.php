@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/faq', function () {
+    return view('faq');
+});
 
 Route::resource('/dashboards', DashboardController::class);
 Route::resource('/blog', BlogController::class);

@@ -8,16 +8,16 @@
     <div class="collapse navbar-collapse text-dark" id="navbarNavDropdown">
         <ul class="navbar-nav mx-4">
             <li class="nav-item active mx-1">
-                <a class="nav-link text-dark {{ Request::route()->getName() === null ? "rounded-3 bg-darkgreen" : "" }}" href="/">Home</a>
+                <a class="nav-link text-dark {{ Request::path() === '/' ? "rounded-3 bg-darkgreen" : "" }}" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark mx-1" href="profile">Profile</a>
+                <a class="nav-link text-dark mx-1 {{ Request::path() === 'profile' ? "rounded-3 bg-darkgreen" : "" }}" href="profile">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark mx-1 {{ request()->routeIs('dashboards.*') ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('dashboards.index') }}">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark mx-1" href="#">FAQ</a>
+                <a class="nav-link text-dark mx-1 {{ request()->path() === 'faq' ? "rounded-3 bg-darkgreen" : "" }}" href="/faq">FAQ</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark mx-1 {{ request()->routeIs('blog.*') ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('blog.index') }}">Blog</a>
