@@ -20,9 +20,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $paginate_amount = 5;
-        $blogs = Blog::paginate($paginate_amount);
+        $blogs = Blog::paginate(5);
         $page = request()->page;
+        $lastPage = $blogs->lastPage();
         if ($page === null) {
             $page = 1;
         }
@@ -30,7 +30,7 @@ class BlogController extends Controller
         return view('blogs.index', [
             'blogs' => $blogs,
             'page' => $page,
-            'paginate_amount' => $paginate_amount,
+            'lastPage' => $lastPage,
         ]);
     }
 

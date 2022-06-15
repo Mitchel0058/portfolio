@@ -1,24 +1,28 @@
 window.addEventListener('load', function () {
-    blogCreate();
+    blogs();
 })
 
-function blogCreate() {
-    console.log('blogCreate js loaded successfully');
+function blogs() {
+    console.log('blogs js loaded successfully');
     const imgLink = document.getElementById('img_link');
     const imgLinkError = document.getElementById('img_linkError');
+    const imgPreview = document.getElementById('imgPreview');
     console.log(imgLink)
-    
+
     imgLink.addEventListener('input', () => {
-        if (isImage(imgLink.value)) {
+        if (imgLink.value === '') {
+            imgLink.style = 'border: 0px;'
+            imgLinkError.innerHTML = "";
+        } else if (isImage(imgLink.value)) {
             imgLink.style = 'border-width: 3px; border-color: green';
             imgLinkError.innerHTML = "";
+            imgPreview.src = imgLink.value;
         } else {
             imgLink.style = 'border-width: 3px; border-color: red';
             imgLinkError.innerHTML = "Not an img";
+            imgPreview.src = '';
         }
     });
-
-
 }
 
 function isImage(url) {

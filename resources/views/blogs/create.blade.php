@@ -1,6 +1,6 @@
 @extends('mainLayout')
 @section('content')
-    <script src="/js/blogCreate.js"></script>
+    <script src="/js/blogs.js"></script>
     <form method="POST" action="{{ route('blog.store') }}">
         @csrf
         <div class="mb-3">
@@ -19,6 +19,7 @@
             <textarea name="paragraph" type="text"
                       class="form-control @error('paragraph') border-2 border-danger @enderror"
                       placeholder="The text/paragraph of the blog" rows="10">{{ old('paragraph') }}</textarea>
+            <div id="paragraphHelp" class="form-text">This keeps linebreaks but not multiple spaces</div>
             @error('paragraph')
             <p class="text-danger my-0">{{ $message }}</p>
             @enderror
@@ -31,6 +32,7 @@
                    value="{{ old('img_link') }}" placeholder="Link to an image, may be left blank">
             <div id="imgHelp" class="form-text">Link to an image, can be left blank</div>
             <p class="text-danger" id="img_linkError"></p>
+            <img src="" id="imgPreview" class="mw-10 mh-10">
             @error('img_link')
             <p class="text-danger">{{ $message }}</p>
             @enderror

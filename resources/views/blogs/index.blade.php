@@ -18,7 +18,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger"
-                                onclick="return confirm('Are you certain you want to delete this foo?')">Delete
+                                onclick="return confirm('Are you certain you want to delete this blog?')">Delete
                         </button>
                     </form>
                 </div>
@@ -26,10 +26,19 @@
             <br/>
         @endforeach
         <div style="max-width: 60%">
+            <a href="/blog?page=1" class="float-sm-start h5 me-3">First</a>
             @if($page > 1)
                 <a href="/blog?page={{ $page - 1}}" class="float-sm-start h5">Previous</a>
             @endif
-            @if(($page + 1) * ($paginate_amount - 1) <= $blogs->total())
+            <div class="m-0 w-fit-content h-0">
+                @for($i = 1; $i < $page + 5; $i++)
+                    @if($i - 1 < $lastPage)
+                        <a href="/blog?page={{ $i }}" class=" h5">{{ $i }}</a>
+                    @endif
+                @endfor
+            </div>
+            <a href="/blog?page={{ $lastPage }}" class="float-sm-end h5 ms-3">Last</a>
+            @if($page < $lastPage)
                 <a href="/blog?page={{ $page + 1}}" class="float-sm-end h5">Next</a>
             @endif
             <br/>

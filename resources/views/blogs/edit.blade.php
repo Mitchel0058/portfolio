@@ -51,7 +51,7 @@
                     @method('DELETE')
                     <div class="control">
                         <button type="submit" class="btn btn-danger"
-                                onclick="return confirm('Are you certain you want to delete this foo?')">Delete
+                                onclick="return confirm('Are you certain you want to delete this blog?')">Delete
                         </button>
                     </div>
                 </form>

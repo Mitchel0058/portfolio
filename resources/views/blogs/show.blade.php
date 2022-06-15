@@ -5,7 +5,7 @@
         <div class="h1 text-center">
             {{ ucfirst($blog->title) }}
         </div>
-        <div class="h2 w-75">
+        <div class="h2 w-75 keep-linebreaks">
             {{ $blog->paragraph }}
         </div>
         @if($blog->img_link !== null)
