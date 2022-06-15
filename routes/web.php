@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/profile', function () {
     return view('profile');
 });
@@ -28,3 +27,9 @@ Route::get('/faq', function () {
 
 Route::resource('/dashboards', DashboardController::class);
 Route::resource('/blog', BlogController::class);
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

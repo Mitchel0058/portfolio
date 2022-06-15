@@ -11,16 +11,20 @@
                 <a class="nav-link text-dark {{ Request::path() === '/' ? "rounded-3 bg-darkgreen" : "" }}" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark mx-1 {{ Request::path() === 'profile' ? "rounded-3 bg-darkgreen" : "" }}" href="profile">Profile</a>
+                <a class="nav-link text-dark mx-1 {{ Request::path() === 'profile' ? "rounded-3 bg-darkgreen" : "" }}"
+                   href="profile">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark mx-1 {{ request()->routeIs('dashboards.*') ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('dashboards.index') }}">Dashboard</a>
+                <a class="nav-link text-dark mx-1 {{ request()->routeIs('dashboards.*') ? "rounded-3 bg-darkgreen" : "" }}"
+                   href="{{ route('dashboards.index') }}">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark mx-1 {{ request()->path() === 'faq' ? "rounded-3 bg-darkgreen" : "" }}" href="/faq">FAQ</a>
+                <a class="nav-link text-dark mx-1 {{ request()->path() === 'faq' ? "rounded-3 bg-darkgreen" : "" }}"
+                   href="/faq">FAQ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark mx-1 {{ request()->routeIs('blog.*') ? "rounded-3 bg-darkgreen" : "" }}" href="{{ route('blog.index') }}">Blog</a>
+                <a class="nav-link text-dark mx-1 {{ request()->routeIs('blog.*') ? "rounded-3 bg-darkgreen" : "" }}"
+                   href="{{ route('blog.index') }}">Blog</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink"
@@ -45,6 +49,22 @@
         </ul>
     </div>
     <div class="collapse navbar-collapse text-dark justify-content-end">
-        <a class="nav-link text-dark" href="#">Log in</a>
+        @auth()
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Welcome, {{ \Illuminate\Support\Facades\Auth::user()->name }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-end end-0">
+                    <a class="dropdown-item"
+                       href="/logout">
+                        Logout
+                    </a>
+                </div>
+            </div>
+        @else()
+            <a class="nav-link text-dark" href="/login">Log in</a>
+        @endauth
     </div>
 </nav>

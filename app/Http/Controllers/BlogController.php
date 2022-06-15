@@ -10,6 +10,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -41,7 +42,12 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blogs.create');
+        if (Auth::check()) {
+            return view('blogs.create');
+        } else {
+            return redirect('blog');
+        }
+
     }
 
     /**
@@ -52,7 +58,7 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-    //    Should check if img_link is an img and if not make img_link null but doesn't work and don't know why
+        //    Should check if img_link is an img and if not make img_link null but doesn't work and don't know why
 
 //        $headers = get_headers($request->img_link, 1);
 //        if (strpos($headers['Content-Type'], 'image') !== false) {
@@ -92,7 +98,11 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        return view('blogs.edit', ['blog' => $blog]);
+        if (Auth::check()) {
+            return view('blogs.edit', ['blog' => $blog]);
+        } else {
+            return redirect('blog');
+        }
     }
 
     /**
