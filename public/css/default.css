@@ -18,8 +18,24 @@
     width: 20% !important;
 }
 
+.w-fit-content {
+    width: fit-content !important;
+}
+
+.h-0 {
+    height: 0 !important;
+}
+
 .cursor-pointer:hover {
     cursor: pointer;
+}
+
+.mw-10 {
+    max-width: 10%; !important;
+}
+
+.mh-10 {
+    max-height: 10%; !important;
 }
 
 .mw-30 {
@@ -36,4 +52,12 @@
 
 .all-unset {
     all: unset;
+}
+
+.bg-darkgrey {
+    background-color: #282828; !important;
+}
+
+.keep-linebreaks {
+    white-space: pre-line; !important;
 }
