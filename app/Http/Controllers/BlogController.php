@@ -66,15 +66,17 @@ class BlogController extends Controller
 //        } else {
 //            dd("$request->img_link} NOPE");
 //        }
+        if (Auth::check()) {
+            Blog::create($request->validate([
+                'title' => 'required|string|max:100',
+                'paragraph' => 'required|string|max:65534',
+                'img_link' => 'nullable'
+            ]));
+            return redirect('/blog');
+        } else {
+            return redirect('blog');
+        }
 
-
-        Blog::create($request->validate([
-            'title' => 'required',
-            'paragraph' => 'required',
-            'img_link' => 'nullable'
-        ]));
-
-        return redirect('/blog');
     }
 
     /**
@@ -114,8 +116,9 @@ class BlogController extends Controller
      */
     public function update(UpdateBlogRequest $request, Blog $blog)
     {
+
         $blog->update($request->validate([
-            'title' => 'required',
+            'title' => 'required|string|max:100',
             'paragraph' => 'required',
             'img_link' => 'nullable'
         ]));

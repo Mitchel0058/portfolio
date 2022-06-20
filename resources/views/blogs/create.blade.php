@@ -8,7 +8,7 @@
             <input name="title" type="text"
                    class="form-control @error('title') border-2 border-danger @enderror"
                    value="{{ old('title') }}" placeholder="The title of the blog">
-            <div id="titleHelp" class="form-text">The title of the blog</div>
+            <div id="titleHelp" class="form-text">The title of the blog, max 100 characters</div>
             @error('title')
             <p class="text-danger my-0">{{ $message }}</p>
             @enderror
@@ -32,7 +32,10 @@
                    value="{{ old('img_link') }}" placeholder="Link to an image, may be left blank">
             <div id="imgHelp" class="form-text">Link to an image, can be left blank</div>
             <p class="text-danger" id="img_linkError"></p>
-            <img src="" id="imgPreview" class="mw-10 mh-10">
+            <div id="previewMsg" hidden>Preview of the img:
+                <div>If it did not load please try a different link</div>
+            </div>
+            <img src="" id="imgPreview" class="mw-10 mh-10" alt="this link does not work">
             @error('img_link')
             <p class="text-danger">{{ $message }}</p>
             @enderror

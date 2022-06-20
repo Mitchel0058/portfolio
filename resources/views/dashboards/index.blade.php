@@ -1,4 +1,5 @@
 @extends('mainLayout')
+<title>Dashboard</title>
 @section('content')
     <div class="container">
         <div class="bg-darkerblue">

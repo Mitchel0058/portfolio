@@ -2,26 +2,41 @@ window.addEventListener('load', function () {
     blogs();
 })
 
-function blogs() {
-    console.log('blogs js loaded successfully');
+function checkIfImg() {
     const imgLink = document.getElementById('img_link');
     const imgLinkError = document.getElementById('img_linkError');
     const imgPreview = document.getElementById('imgPreview');
-    console.log(imgLink)
+    const previewMsg = document.getElementById('previewMsg');
 
-    imgLink.addEventListener('input', () => {
-        if (imgLink.value === '') {
-            imgLink.style = 'border: 0px;'
-            imgLinkError.innerHTML = "";
-        } else if (isImage(imgLink.value)) {
-            imgLink.style = 'border-width: 3px; border-color: green';
-            imgLinkError.innerHTML = "";
-            imgPreview.src = imgLink.value;
-        } else {
-            imgLink.style = 'border-width: 3px; border-color: red';
-            imgLinkError.innerHTML = "Not an img";
-            imgPreview.src = '';
-        }
+    if (imgLink.value === '') {
+        console.log('1');
+        imgLink.style = 'border: 0px;'
+        imgLinkError.innerHTML = ""
+        previewMsg.setAttribute('hidden', false);
+        imgPreview.setAttribute('hidden', false);
+    } else if (isImage(imgLink.value)) {
+        console.log('2');
+        imgLink.style = 'border-width: 3px; border-color: green';
+        imgLinkError.innerHTML = "";
+        imgPreview.src = imgLink.value;
+        previewMsg.removeAttribute('hidden');
+        imgPreview.removeAttribute('hidden');
+    } else {
+        console.log('3');
+        imgLink.style = 'border-width: 3px; border-color: red';
+        imgLinkError.innerHTML = "Probably not an img, but if it loads correctly here it will still work";
+        imgPreview.src = imgLink.value;
+        previewMsg.setAttribute('hidden', false);
+        imgPreview.removeAttribute('hidden');
+    }
+}
+
+function blogs() {
+    console.log('blogs js loaded successfully');
+    checkIfImg();
+
+    document.getElementById('img_link').addEventListener('input', () => {
+        checkIfImg();
     });
 }
 

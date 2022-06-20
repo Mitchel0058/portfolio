@@ -1,11 +1,14 @@
 @extends('mainLayout')
 @section('content')
-    <a href="/blog">Back</a>
+    <a href="/blog" class="h4">⮜ back</a>
+    @auth
+    <a href="/blog/{{ $blog->id }}/edit" class="float-end btn btn-dark">Edit</a>
+    @endauth
     <div class="container">
-        <div class="h1 text-center">
+        <div class="h1 text-center text-break">
             {{ ucfirst($blog->title) }}
         </div>
-        <div class="h2 w-75 keep-linebreaks">
+        <div class="h2 w-75 keep-linebreaks text-break">
             {{ $blog->paragraph }}
         </div>
         @if($blog->img_link !== null)

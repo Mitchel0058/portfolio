@@ -3,14 +3,14 @@
 @section('content')
     <div class="container" style="text-align: -webkit-center">
         @auth
-        <a href="/blog/create" class="btn btn-success position-absolute end-0">New blog</a>
+            <a href="/blog/create" class="btn btn-success position-absolute end-0">New blog</a>
         @endauth
         @foreach($blogs as $blog)
             <div class="d-flex flex-column p-2 border border-darkblue bg-darkerblue" style="max-width: 60%">
-                <div class="text-center h3">
+                <div class="text-center h3 mw-100 text-break">
                     {{ $blog->title }}
                 </div>
-                <p class="h4">
+                <p class="h4 text-break">
                     {{ Str::limit($blog->paragraph, 150, '...') }}
                 </p>
                 <a href="/blog/{{ $blog->id }}" class="h4">Read blog</a>
@@ -35,9 +35,19 @@
                 <a href="/blog?page={{ $page - 1}}" class="float-sm-start h5">Previous</a>
             @endif
             <div class="m-0 w-fit-content h-0">
-                @for($i = 1; $i < $page + 5; $i++)
-                    @if($i - 1 < $lastPage)
-                        <a href="/blog?page={{ $i }}" class=" h5">{{ $i }}</a>
+                @for($i = $page - 2; $i <= $page + 2; $i++)
+                    @if($i === $page - 2 && $i > 1)
+                        ...
+                    @endif
+                    @if(!($i < 1) && !($i > $lastPage))
+                        @if($i === intVal($page))
+                            <a class="m-0 w-fit-content h-0 h5 text-info">{{ $i }}</a>
+                        @else
+                            <a href="/blog?page={{ $i }}" class=" h5">{{ $i }}</a>
+                        @endif
+                    @endif
+                    @if($i === $page + 2 && $i < $lastPage)
+                        ...
                     @endif
                 @endfor
             </div>
