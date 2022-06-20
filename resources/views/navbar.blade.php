@@ -51,20 +51,21 @@
     <div class="collapse navbar-collapse text-dark justify-content-end">
         @auth()
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink"
+                <a class="nav-link dropdown-toggle text-dark me-2" href="#" id="navbarDropdownMenuLink"
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Welcome, {{ \Illuminate\Support\Facades\Auth::user()->name }}
                 </a>
-                <div class="dropdown-menu dropdown-menu-end end-0">
+                <div class="dropdown-menu dropdown-menu-end end-0 me-2">
                     <a class="dropdown-item"
-                       href="/logout">
+                       href="/logout"
+                       onclick="return confirm('Do you want to logout?')">
                         Logout
                     </a>
                 </div>
             </div>
         @else()
-            <a class="nav-link text-dark" href="/login">Log in</a>
+            <a class="nav-link text-dark me-2 {{ request()->routeIs('login') ? "rounded-3 bg-darkgreen" : "" }}" href="/login">Log in</a>
         @endauth
     </div>
 </nav>

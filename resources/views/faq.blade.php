@@ -1,6 +1,8 @@
 @extends('mainLayout')
+<title>FAQ</title>
 @section('content')
     <div class="container">
+        <div class="h2 text-center">Frequently Asked Questions about the HZ</div>
         <div class="h3">
             Hoe print je een document hier op de HZ?
         </div>
