@@ -31,23 +31,23 @@
 }
 
 .mw-10 {
-    max-width: 10%; !important;
+    max-width: 10% !important;
 }
 
 .mh-10 {
-    max-height: 10%; !important;
+    max-height: 10% !important;
 }
 
 .mw-30 {
-    max-width: 30%; !important;
+    max-width: 30% !important;
 }
 
 .mh-75 {
-    max-height: 75%; !important;
+    max-height: 75% !important;
 }
 
 .top-20 {
-    top: 20%; !important;
+    top: 20% !important;
 }
 
 .all-unset {
@@ -55,9 +55,9 @@
 }
 
 .bg-darkgrey {
-    background-color: #282828; !important;
+    background-color: #282828 !important;
 }
 
 .keep-linebreaks {
-    white-space: pre-line; !important;
+    white-space: pre-line !important;
 }
