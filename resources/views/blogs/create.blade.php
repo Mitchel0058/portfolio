@@ -31,14 +31,14 @@
                    class="form-control @error('img_link') border-2 border-danger @enderror"
                    value="{{ old('img_link') }}" placeholder="Link to an image, may be left blank">
             <div id="imgHelp" class="form-text">Link to an image, can be left blank</div>
+            @error('img_link')
+            <p class="text-danger">{{ $message }} Or be left blank.</p>
+            @enderror
             <p class="text-danger" id="img_linkError"></p>
             <div id="previewMsg" hidden>Preview of the img:
                 <div>If it did not load please try a different link</div>
             </div>
             <img src="" id="imgPreview" class="mw-10 mh-10" alt="this link does not work">
-            @error('img_link')
-            <p class="text-danger">{{ $message }}</p>
-            @enderror
         </div>
 
         <div class="mb-3">
