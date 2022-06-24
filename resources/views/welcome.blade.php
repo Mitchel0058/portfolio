@@ -1,5 +1,5 @@
 @extends('mainLayout')
-@section('content') 
+@section('content')
     <h1 class="text-center">
         The main page of my portfolio
     </h1>
