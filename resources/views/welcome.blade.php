@@ -1,5 +1,6 @@
 @extends('mainLayout')
 @section('content')
+    <?php phpinfo() ?>
     <h1 class="text-center">
         The main page of my portfolio
     </h1>
