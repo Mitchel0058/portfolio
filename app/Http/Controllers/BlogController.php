@@ -111,7 +111,6 @@ class BlogController extends Controller
      */
     public function update(UpdateBlogRequest $request, Blog $blog)
     {
-
         $blog->update($request->validate([
             'title' => 'required|string|max:100',
             'paragraph' => 'required|string|max:65534',

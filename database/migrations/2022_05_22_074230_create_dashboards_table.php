@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer('quartile')->unsigned();
             $table->text('course');
             $table->integer('EC')->unsigned();
-            $table->integer('course_grade')->unsigned()->nullable();
             $table->timestamps();
         });
     }

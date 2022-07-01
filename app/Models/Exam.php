@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Exam extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['dashboard_id', 'exam_Name', 'exam_Grade'];
+
     public function dashboard()
     {
         return $this->belongsTo(Dashboard::class);

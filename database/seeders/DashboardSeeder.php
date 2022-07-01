@@ -20,7 +20,6 @@ class DashboardSeeder extends Seeder
             'quartile' => 1,
             'course' => 'Programme and Career Orientation',
             'EC' => 2.5,
-            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -30,7 +29,6 @@ class DashboardSeeder extends Seeder
             'quartile' => 1,
             'course' => 'Computer Science Basics',
             'EC' => 5,
-            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -40,7 +38,6 @@ class DashboardSeeder extends Seeder
             'quartile' => 1,
             'course' => 'Programming Basics',
             'EC' => 5,
-            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -50,7 +47,6 @@ class DashboardSeeder extends Seeder
             'quartile' => 2,
             'course' => 'Object Oriented Programming',
             'EC' => 10,
-            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -60,7 +56,6 @@ class DashboardSeeder extends Seeder
             'quartile' => 3,
             'course' => 'Framework Development 1',
             'EC' => 5,
-            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -70,7 +65,6 @@ class DashboardSeeder extends Seeder
             'quartile' => 3,
             'course' => 'Framework Project 1',
             'EC' => 7.5,
-            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -80,7 +74,6 @@ class DashboardSeeder extends Seeder
             'quartile' => 4,
             'course' => 'Portfolio',
             'EC' => 10,
-            'course_grade' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
