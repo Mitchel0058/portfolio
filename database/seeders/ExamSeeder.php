@@ -26,7 +26,7 @@ class ExamSeeder extends Seeder
         DB::table('exams')->insert([
             'dashboard_id' => 2,
             'exam_name' => 'Written exam',
-            'exam_grade' => null,
+            'exam_grade' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -34,7 +34,7 @@ class ExamSeeder extends Seeder
         DB::table('exams')->insert([
             'dashboard_id' => 3,
             'exam_name' => 'Case study exam',
-            'exam_grade' => null,
+            'exam_grade' => 8,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

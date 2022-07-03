@@ -35,7 +35,7 @@ class ExamController extends Controller
         if (Auth::check()) {
             return view('exams.create');
         } else {
-            return redirect('dashboard');
+            return redirect('dashboards');
         }
     }
 
