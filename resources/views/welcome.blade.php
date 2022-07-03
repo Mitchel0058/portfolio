@@ -1,7 +1,7 @@
 @extends('mainLayout')
 @section('content')
     <h1 class="text-center">
-        The main page of my heroku update 
+        The main page of my profile2
     </h1>
     <h2>
         I decided to recreate my profile site now that I know more about programming and to do my school assignments on.
