@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dashboard;
 use App\Http\Requests\StoreDashboardRequest;
 use App\Http\Requests\UpdateDashboardRequest;
+use App\Models\Dashboard;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
 
 class DashboardController extends Controller
 {
@@ -38,18 +40,25 @@ class DashboardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreDashboardRequest  $request
-     * @return Response
+     * @param StoreDashboardRequest $request
+     * @return Application|RedirectResponse|Redirector
      */
     public function store(StoreDashboardRequest $request)
     {
-        //
+        Dashboard::create($request->validate([
+            'year' => 'required|integer|min:0',
+            'quartile' => 'required|integer|min:0',
+            'course' => 'required|string',
+            'EC' => 'required|numeric|min:0',
+        ]));
+
+        return redirect('/dashboards');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param Dashboard $dashboard
      * @return Response
      */
     public function show(Dashboard $dashboard)
@@ -60,7 +69,7 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param Dashboard $dashboard
      * @return Response
      */
     public function edit(Dashboard $dashboard)
@@ -71,19 +80,26 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateDashboardRequest  $request
-     * @param  \App\Models\Dashboard  $dashboard
-     * @return Response
+     * @param UpdateDashboardRequest $request
+     * @param Dashboard $dashboard
+     * @return Application|Redirector|RedirectResponse
      */
     public function update(UpdateDashboardRequest $request, Dashboard $dashboard)
     {
-        //
+        $dashboard->update($request->validate([
+            'year' => 'required|integer|min:0',
+            'quartile' => 'required|integer|min:0',
+            'course' => 'required|string',
+            'EC' => 'required|numeric|min:0',
+        ]));
+
+        return redirect('/blog');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Dashboard  $dashboard
+     * @param Dashboard $dashboard
      * @return Response
      */
     public function destroy(Dashboard $dashboard)

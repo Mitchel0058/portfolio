@@ -50,7 +50,7 @@ class ExamController extends Controller
         Exam::create($request->validate([
             'dashboard_id' => 'required|integer|min:0',
             'exam_Name' => 'required|string',
-            'exam_Grade' => 'nullable|integer|min:0|max:10'
+            'exam_Grade' => 'nullable|numeric|min:0|max:10'
         ]));
 
         return redirect('/dashboards');
@@ -90,7 +90,7 @@ class ExamController extends Controller
         $exam->update($request->validate([
             'dashboard_id' => 'required|integer|min:0',
             'exam_Name' => 'required|string',
-            'exam_Grade' => 'nullable|integer|min:0|max:10'
+            'exam_Grade' => 'nullable|numeric|min:0|max:10'
         ]));
 
         return redirect('/dashboards');

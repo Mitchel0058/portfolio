@@ -58,6 +58,11 @@ class BlogController extends Controller
     public function store(StoreBlogRequest $request)
     {
         //    Should check if img_link is an img and if not make img_link null but doesn't work and don't know why
+        if (filter_var($request->img_link, FILTER_VALIDATE_URL)) {
+            if (!($this->isImage($request->img_link))) {
+                $request->merge(['img_link' => null]);
+            }
+        }
 
 //        $headers = get_headers($request->img_link, 1);
 //        if (strpos($headers['Content-Type'], 'image') !== false) {
@@ -65,6 +70,7 @@ class BlogController extends Controller
 //        } else {
 //            dd("$request->img_link} NOPE");
 //        }
+
         Blog::create($request->validate([
             'title' => 'required|string|max:100',
             'paragraph' => 'required|string|max:65534',
@@ -131,5 +137,42 @@ class BlogController extends Controller
         $blog->delete();
 
         return redirect('/blog');
+    }
+
+
+    /**
+     * Checks if an url is an img
+     *
+     * @param $url string the url to be tested
+     * @return bool returns if the url is an img true or false
+     */
+    function isImage($url): bool
+    {
+        $params = array('http' => array(
+            'method' => 'HEAD'
+        ));
+        $ctx = stream_context_create($params);
+        $fp = @fopen($url, 'rb', false, $ctx);
+        if (!$fp)
+            return false;  // Problem with url
+
+        $meta = stream_get_meta_data($fp);
+        if ($meta === false) {
+            fclose($fp);
+            return false;  // Problem reading data from url
+        }
+
+        $wrapper_data = $meta["wrapper_data"];
+        if (is_array($wrapper_data)) {
+            foreach (array_keys($wrapper_data) as $hh) {
+                if (substr($wrapper_data[$hh], 0, 19) == "Content-Type: image") // strlen("Content-Type: image") == 19
+                {
+                    fclose($fp);
+                    return true;
+                }
+            }
+        }
+        fclose($fp);
+        return false;
     }
 }

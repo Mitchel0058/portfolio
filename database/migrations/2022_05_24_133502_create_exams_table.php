@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('dashboard_id')->constrained();
             $table->text('exam_Name');
-            $table->integer('exam_Grade')->unsigned()->nullable();
+            $table->decimal('exam_Grade')->unsigned()->nullable();
             $table->timestamps();
         });
     }

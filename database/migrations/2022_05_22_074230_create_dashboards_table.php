@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('year')->unsigned();
             $table->integer('quartile')->unsigned();
             $table->text('course');
-            $table->integer('EC')->unsigned();
+            $table->decimal('EC')->unsigned();
             $table->timestamps();
         });
     }

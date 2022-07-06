@@ -9,6 +9,8 @@ class Dashboard extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['year', 'quartile', 'course', 'EC'];
+
     public function exam()
     {
         return $this->hasMany(Exam::class);

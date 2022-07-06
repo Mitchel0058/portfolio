@@ -32,9 +32,6 @@ class BlogTest extends TestCase
 
     public function test_blog_denies_validation_correctly()
     {
-        // when nothing gets sent
-        $this->post('/blog', [])->assertSessionHasErrors()->assertStatus(302);
-
         // when all are wrong inputs
         $this->post('/blog', ['title' => 3, 'paragraph' => 45, 'img_link' => 'hi'])
             ->assertSessionHasErrors()->assertStatus(302);
